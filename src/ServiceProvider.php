@@ -27,11 +27,8 @@ class ServiceProvider extends IlluminateServiceProvider
     public function register()
     {
         // Add couchdb to the database manager
-        $this->app->resolving('db', function ($db) {
-            $db->extend('couchdb', function ($config, $name) {
-                $config['name'] = $name;
-                return new Connection($config);
-            });
+        \Illuminate\Database\Connection::resolverFor('couchdb', function ($connection, $database, $prefix, $config) {
+            return new Connection($config);
         });
         // Add connector for queue support.
         $this->app->resolving('queue', function ($queue) {
