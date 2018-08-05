@@ -2,7 +2,7 @@
 
 namespace Robsonvn\CouchDB;
 
-use Doctrine\CouchDB\MangoClient;
+use Robsonvn\CouchDB\Doctrine\MangoClient;
 use Illuminate\Database\Connection as BaseConnection;
 
 class Connection extends BaseConnection
