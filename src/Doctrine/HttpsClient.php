@@ -2,7 +2,7 @@
 
 namespace Robsonvn\CouchDB\Doctrine;
 
-use Doctrine\CouchDB\HTTP;
+use Doctrine\CouchDB\HTTP\StreamClient;
 
 class HttpsClient extends StreamClient
 {
